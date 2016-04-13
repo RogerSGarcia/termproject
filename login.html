@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PFCMS</title>
+
+    <!-- Bootstrap -->
+    <!--
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-pincode-input.css" rel="stylesheet">
+
+
+    <!--
+    <style>
+        body{
+ background-color:#fafafa;
+        }
+        .container { margin:30px auto; max-width:640px; text-align:center;}
+    </style>
+    -->
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/bootstrap-pincode-input.js"></script>
+
+
+
+    <script>
+        $(document).ready(function() {
+
+
+            $('#pincode-input1').pincodeInput({complete:function(value, e, errorElement){
+
+                $("#pincode-callback").html(" You entered Current value: " + value);
+
+                // check the code
+                if(value!="1234"){
+                    $(errorElement).html("Okay please standby.");
+                    setTimeout("location.href = 'login_success.html';",2000);
+                    //window.location.href ="login_success.html";
+                }else{
+                    alert('Pin is Correct!');
+                    window.location.href ="login_success.html";
+                }
+
+            }});
+
+            /*
+            $('#pincode-input2').pincodeInput({hideDigits:false,inputs:6,complete:function(value, e, errorElement){
+                $("#pincode-callback").html("Complete callback from 6-digit test: Current value: " + value);
+            }});
+            */
+
+        });
+    </script>
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Please Enter PIN to autenticate access</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./login.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                </ul>
+            </div>
+        </div> 
+    </div>
+
+    <header>
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h1>The Pirate Fighting Management System</h1>
+                    </div>
+                    <div class="col-xs-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-lg-9">
+
+
+                    <input type="text" id="pincode-input1">
+                    <br/>
+                    <!--
+                    <b>Methods:</b><br/>
+                    <a href="#" onclick="javascript:$('#pincode-input1').pincodeInput().data('plugin_pincodeInput').focus()" class="btn btn-danger">focus</a>
+                    <a href="#" onclick="javascript:$('#pincode-input1').pincodeInput().data('plugin_pincodeInput').clear()" class="btn btn-danger">clear</a><br/>
+                    <br/>
+                    -->
+                    
+                    <span id="pincode-callback"></span>
+
+                    <!--<h4>6 visible digits example</h4>
+                    <br/>
+                    <br/>
+                    <input type="text" id="pincode-input2"  >
+                    <br/>
+                    -->
+                </div>
+
+
+                <div class="col-xs-1"></div>
+            </div>
+        </div>
+
+        </div>
+
+
+
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--
+    <script src="js/bootstrap.min.js"></script>
+    -->
+
+</body>
+
+
+</html>
+
