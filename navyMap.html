@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Find Navy Bases and WarShips</title>
+
+  <!-- Bootstrap -->
+  <!-- Something for Bootstrap-->
+  <script src="js/bootstrap.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Include this to use the map API----->
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+
+  <!-- Style-->
+  <style>
+    /* set size for the Map container that holds the map */
+    .map{
+      width: 850px;
+      height: 600px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Map View!</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="./login_success.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li><a href="/"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a></li>
+        </ul>
+      </div>
+    </div>
+  </div><!---End Nav bar container-->
+
+
+  <!-- Map Container-->
+  <div id="googleMap" class="container text-center map">
+
+  </div>
+
+</body>
+
+<script>
+  //Locations for Markers!
+  var tampaFlorida = {lat: 27.9506, lng: -82.457};
+  var newOrleans = {lat: 29.95, lng: -90.077};
+  var navyShip1 = {lat: 22.95, lng: -87.077};
+  var navyShip2 = {lat: 23.95, lng: -92.077};
+
+  var ourShip = {lat: 25.95, lng: -88.077};
+
+  //Set the Map options: size, location, zoom, UI, etc...
+  function create_map() {
+    var mapOptions = {
+      center:new google.maps.LatLng(25.508742,-89.120850),
+      zoom:6,
+      mapTypeId:google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true,
+      draggable: false,
+      scrollwheel: false
+    };
+
+    //choose locaiton for map (div with id="googleMap")
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+
+
+    //Create the Markers!
+    var marker = new google.maps.Marker({
+     position: tampaFlorida,
+     map: map,
+     title: 'Tamapa Navy Base',
+     label: 'N'
+    });
+
+   var marker = new google.maps.Marker({
+      position: newOrleans,
+      map: map,
+      title: 'New Orleans Navy Base',
+      label: 'N'
+    });
+
+   var marker = new google.maps.Marker({
+      position: navyShip1,
+      map: map,
+      title: 'Navy Ship #1',
+      label: 'N'
+    });
+
+     var marker = new google.maps.Marker({
+        position: navyShip2,
+        map: map,
+        title: 'Navy Ship #2',
+        label: 'N'
+      });
+
+
+     var marker = new google.maps.Marker({
+        position: ourShip,
+        map: map,
+        title: 'Your Ship',
+        label: ''
+      });
+  }
+
+  //Call the create_map() function when the page loads
+  google.maps.event.addDomListener(window, 'load', create_map);
+
+</script>
+</html>
