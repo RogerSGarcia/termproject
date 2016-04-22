@@ -45,10 +45,10 @@
           <a class="navbar-brand" href="#">Map View!</a>
       </div>
       <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-              <li><a href="./login_success.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-              <li><a href=""><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a></li>
-          </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="./login_success.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li><a href=""><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a></li>
+        </ul>
       </div>
     </div>
   </div><!---End Nav bar container-->
@@ -59,15 +59,18 @@
 
   </div>
 
-
 </body>
 
 <script>
   //Locations for Markers!
   var tampaFlorida = {lat: 27.9506, lng: -82.457};
   var newOrleans = {lat: 29.95, lng: -90.077};
+  var navyShip1 = {lat: 22.95, lng: -87.077};
+  var navyShip2 = {lat: 23.95, lng: -92.077};
 
-  //Set the Map options: size, zoom, UI, etc...
+  var ourShip = {lat: 25.95, lng: -88.077};
+
+  //Set the Map options: size, location, zoom, UI, etc...
   function create_map() {
     var mapOptions = {
       center:new google.maps.LatLng(25.508742,-89.120850),
@@ -96,6 +99,28 @@
       title: 'New Orleans Navy Base',
       label: 'N'
     });
+
+   var marker = new google.maps.Marker({
+      position: navyShip1,
+      map: map,
+      title: 'Navy Ship #1',
+      label: 'N'
+    });
+
+     var marker = new google.maps.Marker({
+        position: navyShip2,
+        map: map,
+        title: 'Navy Ship #2',
+        label: 'N'
+      });
+
+
+     var marker = new google.maps.Marker({
+        position: ourShip,
+        map: map,
+        title: 'Your Ship',
+        label: ''
+      });
   }
 
   //Call the create_map() function when the page loads
