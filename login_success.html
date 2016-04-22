@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <style type="text/css">
         #map-canvas{
             height:500px;
@@ -23,44 +24,70 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-  </head>
 
+    <!-- Include this to use the map API----->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script>
+      /***************************************
+      @summary    Function is used to create a google map. Google Map will
+                  not load when the div is places in any other tab then the
+                  home tab. We have not found a solution to this yet.
+                  :: april 22 -evan
+      @parameters na
+      @returns    na
+      ***************************************/
+
+
+      /*
+      function initialize() {
+        var mapProp = {
+          center:new google.maps.LatLng(51.508742,-0.120850),
+          zoom:5,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+      }
+      //js callback function?
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+      // put this div where you want the map to be!
+      <div id="googleMap" style="width:500px;height:380px;"></div>
+      */
+    </script>
+  </head>
   <body>
 
-
   <div class="container-fluid">
-
-            <div class="navbar navbar-default" role="navigation">
-
-                    <div class="navbar-header">
-
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-
-                        <a class="navbar-brand" href="#">Login Successful, Welcome Captain</a>
-
-                    </div>
-
-                    <div class="navbar-collapse collapse">
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="./login_success.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                        </ul>
-
-                    </div>
-            </div>
-
+    <div class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Login Successful, Welcome Captain</a>
+      </div>
+      <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="./login_success.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          </ul>
+      </div>
     </div>
+  </div>
 
-
-    
 
     <div class="container-fluid">
-
        <ul class="nav nav-pills">
            <li class="active"><a href="#Welcome" data-toggle="tab">Welcome</a></li>
            <li><a href="#Friendly" data-toggle="tab">Find Friendly</a></li>
@@ -71,91 +98,99 @@
        </ul>
 
         <div class="tab-content">
+          <div class="tab-pane active"  id="Welcome">
+            <h1> Welcome to Monitoring System</h1>
+            <table class="table">
+              <!--Table Header-->
+              <thread>
+                <tr>
+                  <th>CURRENT THREAT LEVEL</th>
+                  <th>Action being Taken</th>
+                </tr>
+              </thead>
 
-            <div class="tab-pane active"  id="Welcome">
-                    
-                    <h1> Welcome to Monitoring System</h1>
+              <!--Table Body-->
+              <tbody>
+                <tr class="danger">
+                  <th scope="row">1</th>
+                  <td>Prepare to call Us Navy</td>
+                </tr>
+              </tbody>
+            </table>
+            <!--end table-->
+            <br/><br/><br/><br/><br/>
+            <table class="table">
+              <!--TAble Header-->
+              <thread>
+                <tr>
+                  <th>Threat LEVEL</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <!-- -table body-->
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>MAYDAY</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>MAYDAY</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>MAYDAY</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-                    <table class="table">
-                        <thread>
-                            <tr>
-                                <th>CURRENT THREAT LEVEL</th>
-                                <th>Action being Taken</th>
-                            </tr>
-                        </thead>
-
-                      <tbody>
-                        <tr class="danger">
-                          <th scope="row">1</th>
-                          <td>Prepare to call Us Navy</td>                         
-                        </tr>
-                      </tbody>
-                    <br/>
-                    </table>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <table class="table">
-                        <thread>
-                        <tr>
-                          <th>Threat LEVEL</th>
-                          <th>Description</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>MAYDAY</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>MAYDAY</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>MAYDAY</td>
-                        </tr>
-                      </tbody>
-                    </table>
+<!--Friendly Tab!-->
+          <div class="tab-pane fade test"  id="Friendly">
+            <h2>Find Friendly ships</h2>
+            <div class="container">
+              <div class="well">
+              </div>
             </div>
+          </div>
 
-            <div class="tab-pane fade"  id="Friendly">
-                <h2>Find Friendly ships</h2> 
-                <div class="container">
-                <div class="well"></div>
-                </div>   
+<!--Pirate Tab!-->
+          <div class="tab-pane fade"  id="Pirate_ship">
+            <h2>Find Pirate Ships</h2>
+            <div class="container">
+              <div class="well">
+              </div>
             </div>
+          </div>
 
+<!--Warship Tab!-->
+          <div class="tab-pane fade"  id="War_ship">
+            <h2>Find War Ships</h2>
+            <div class="container">
+              <div class="well">
 
-            <div class="tab-pane fade"  id="Pirate_ship">
-                <h2>Find Pirate Ships</h2>
-                <div class="container">
-                <div class="well"></div>
-                </div>
+              </div>
             </div>
+          </div>
 
-            <div class="tab-pane fade"  id="War_ship">
-                <h2>Find War Ships</h2>
-                <div class="container">
-                    <div class="well"></div>
-                </div>
+<!--Warship Tab!-->
+          <div class="tab-pane fade"  id="Supplies">
+            <h2>Find Local Supplier</h2>
+            <div class="container">
+              <div class="well">
+
+              </div>
             </div>
+          </div>
 
-            <div class="tab-pane fade"  id="Supplies">
-                <h2>Find Local Supplier</h2>
-                <div class="container">
-                <div class="well"></div>
-                </div>
-            </div>
-
-
-            <div class="tab-pane fade"  id="Notify">
-                <h2>Notification Center</h2>
-                <div class="container">
+<!--Notification Tab!-->
+          <div class="tab-pane fade"  id="Notify">
+              <h2>Notification Center</h2>
+              <div class="container">
                 <div class="well">
+                    <!--row-->
                     <div class="row">
+                        <!--Columsn-->
                         <div class="col-md-4">
                             <div class="well"><a href="#">To view log?</a></div>
                         </div>
@@ -165,36 +200,25 @@
                         <div class="col-md-4">
                             <div class="well"><a href="#">Change Password</a></div>
                         </div>
-                    </div>
-                </div>
-                </div>
-            </div>
+                    </div> <!--end row--->
+                </div><!-- end well-->
+              </div>
+          </div><!-- end notification tab--->
+        </div><!-- end of 'tab-content'-->
+    </div><!-- container -->
 
-        </div>  <!-- end of table content -->
-    </div> <!-- container -->
-
-
-
+<!--Footer-->
     <footer class="footer">
       <div class="container">
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <p align="center" class="text-muted"><small>The Pirate Fighting Crisis Management System</small></p>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+              <p align="center" class="text-muted"><small>The Pirate Fighting Crisis Management System</small></p>
+          </div>
+          <div class="col-md-4"></div>
         </div>
-        <div class="col-md-4"></div>
-      </div>
       </div>
     </footer>
 
-
-
- <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-
-
-</body>
+  </body>
 </html>
-
