@@ -125,21 +125,41 @@
                 <tr>
                   <th>Threat LEVEL</th>
                   <th>Description</th>
+                  <th>Actions to be Taken</th>
                 </tr>
               </thead>
               <!-- -table body-->
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>MAYDAY</td>
+                  <td>Pirates are 200 miles from the ship</td>
+                  <td>
+                    A preperation Notification will be sent to the
+                    US Navy and the nearest war ship will be determined
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>MAYDAY</td>
+                  <td>Pirates are 100 miles from the ship</td>
+                  <td>
+                    Will request reienforcments to move to your ship.<br>
+                    Will send preperation notification to suppliers.
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td>MAYDAY</td>
+                  <td>Pirates are 50 miles from the ship</td>
+                  <td>
+                    Prepare for potential takeover: Determin Language of Pirates and request negotiator.
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Ship have been overrun</td>
+                  <td>
+                    Send request for food and medical supplys
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -150,18 +170,86 @@
             <h2>Find Friendly ships</h2>
             <div class="container">
               <div class="well text-center">
-                <a href="friendlyMap.html">
-                  <button type="button" name="button">View Map</button>
-                </a>
-              </div>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Friendly Name</th>
+                      <th>Ship Coordinates {lat, long}</th>
+                      <th>Distance from ship (miles)</th>
+                      <th>Friendly Ship Status</th>
+                      <th>Ship Typer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text class-form-control"></td>
+                      <td>Boaty McBoat-Face</td>
+                      <td>25.09, -89.67</td>
+                      <td>120 miles</td>
+                      <td>Threat Level: 0</td>
+                      <td>Commercial</td>
+                    </tr>
+                    <tr>
+                      <td><input type="text class-form-control"></td>
+                      <td>SS SquarePants</td>
+                      <td>24.09, -87.67</td>
+                      <td>220 miles</td>
+                      <td>Threat Level: 0</td>
+                      <td>Navy</td>
+                    </tr>
+                  </tbody>
+                </table>
+              <a href="friendlyMap.html">
+                <button type="button" name="button">View Map</button>
+              </a>
             </div>
           </div>
+        </div>
 
 <!--Pirate Tab!-->
           <div class="tab-pane fade"  id="Pirate_ship">
             <h2>Find Pirate Ships</h2>
             <div class="container">
               <div class="well text-center">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Pirate Name</th>
+                      <th>Ship Coordinates {lat, long}</th>
+                      <th>Distance from ship (miles)</th>
+                      <th>Number of Pirates</th>
+                      <th>Potential Threat Level</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text class-form-control"></td>
+                      <td>Captain Hook</td>
+                      <td>21.09, -88.67</td>
+                      <td>40 miles</td>
+                      <td>35</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td><input type="text class-form-control"></td>
+                      <td>Jack Sparrow</td>
+                      <td>25.09, -89.67</td>
+                      <td>120 miles</td>
+                      <td>1</td>
+                      <td>5</td>
+                    </tr>
+                    <tr>
+                      <td><input type="text class-form-control"></td>
+                      <td>Davey Jons</td>
+                      <td>24.09, -87.67</td>
+                      <td>220 miles</td>
+                      <td>90</td>
+                      <td>4</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <a href="pirateMap.html">
                   <button type="button" name="button">View Map</button>
                 </a>
@@ -174,6 +262,33 @@
             <h2>Find War Ships</h2>
             <div class="container">
               <div class="well text-center">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Friendly Name</th>
+                      <th>Ship Coordinates {lat, long}</th>
+                      <th>Distance from ship (miles)</th>
+                      <th>Max Time Away (minutes)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text class-form-control"></td>
+                      <td>New Orleans Navy Base</td>
+                      <td>22.09, -84.67</td>
+                      <td>300 miles</td>
+                      <td>72</td>
+                    </tr>
+                    <tr>
+                      <td><input type="text class-form-control"></td>
+                      <td>SS SquarePants</td>
+                      <td>24.09, -87.67</td>
+                      <td>220 miles</td>
+                      <td>120</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <a href="navyMap.html">
                   <button type="button" name="button">View Map</button>
                 </a>
@@ -186,6 +301,33 @@
             <h2>Find Local Supplier</h2>
             <div class="container">
               <div class="well text-center">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Friendly Name</th>
+                      <th>Ship Coordinates {lat, long}</th>
+                      <th>Distance from ship (miles)</th>
+                      <th>Max Time Away (minutes)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text class-form-control"></td>
+                      <td>Mobile Supplier</td>
+                      <td>22.09, -84.67</td>
+                      <td>300 miles</td>
+                      <td>72</td>
+                    </tr>
+                    <tr>
+                      <td><input type="text class-form-control"></td>
+                      <td>SS Supplier Ship</td>
+                      <td>24.09, -87.67</td>
+                      <td>220 miles</td>
+                      <td>120</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <a href="supplierMap.html">
                   <button type="button" name="button">View Map</button>
                 </a>
